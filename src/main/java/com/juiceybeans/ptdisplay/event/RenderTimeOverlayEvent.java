@@ -1,5 +1,6 @@
 package com.juiceybeans.ptdisplay.event;
 
+import com.juiceybeans.ptdisplay.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -31,7 +32,12 @@ public class RenderTimeOverlayEvent {
         GuiGraphics gui = event.getGuiGraphics();
 
 
-        gui.drawString(font, Component.literal(soyFormattedTime(time)), 0, 0, 0xFFFFFF, true);
+
+        if (!Config.useStatFormat) {
+            gui.drawString(font, Component.literal(soyFormattedTime(time)), Config.xPos, Config.yPos, Config.color, Config.dropShadow);
+        } else {
+            gui.drawString(font, Component.literal(statFormattedTime), Config.xPos, Config.yPos, Config.color, Config.dropShadow);
+        }
     }
 
     /**
