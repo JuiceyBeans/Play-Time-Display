@@ -1,15 +1,17 @@
 {
   "homepage": "https://modrinth.com/mod/play-time-display",
   "promos": {
-    "1.21.5-latest": "1.0",
-    "1.21.5-recommended": "1.0",
-    "1.21.1-latest": "1.0",
-    "1.21.1-recommended": "1.0"
+    "1.21.5-latest": "1.0.1",
+    "1.21.5-recommended": "1.0.1",
+    "1.21.1-latest": "1.0.1",
+    "1.21.1-recommended": "1.0.1"
   },
   "1.21.5": {
+    "1.0.1": "Fixed a bug where time display would show in F1",
     "1.0": "Initial release!"
   },
   "1.21.1": {
+    "1.0.1": "Fixed a bug where time display would show in F1",
     "1.0": "Initial release!"
   }
 }
