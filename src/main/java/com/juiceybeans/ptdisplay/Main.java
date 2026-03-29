@@ -24,7 +24,7 @@ public class Main {
         container.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
     }
 
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
     public static class ClientModEvents {
 
         @SubscribeEvent

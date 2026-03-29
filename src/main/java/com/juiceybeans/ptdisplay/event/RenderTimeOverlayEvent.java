@@ -3,9 +3,9 @@ package com.juiceybeans.ptdisplay.event;
 import com.juiceybeans.ptdisplay.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.StatType;
@@ -24,20 +24,20 @@ public class RenderTimeOverlayEvent {
 
         if (!mc.options.hideGui) {
             Font font = mc.font;
-            StatType<ResourceLocation> dummyStat = Stats.CUSTOM;
+            StatType<Identifier> dummyStat = Stats.CUSTOM;
 
             assert mc.player != null;
 
-            Stat<ResourceLocation> playtime = dummyStat.get(Stats.PLAY_TIME, StatFormatter.TIME);
+            Stat<Identifier> playtime = dummyStat.get(Stats.PLAY_TIME, StatFormatter.TIME);
             int time = mc.player.getStats().getValue(playtime);
             String statFormattedTime = playtime.format(time);
-            GuiGraphics gui = event.getGuiGraphics();
+            GuiGraphicsExtractor gui = event.getGuiGraphics();
 
 
             if (!Config.useStatFormat) {
-                gui.drawString(font, Component.literal(soyFormattedTime(time)), Config.xPos, Config.yPos, Config.color, Config.dropShadow);
+                gui.text(font, Component.literal(soyFormattedTime(time)), Config.xPos, Config.yPos, Config.color, Config.dropShadow);
             } else {
-                gui.drawString(font, Component.literal(statFormattedTime), Config.xPos, Config.yPos, Config.color, Config.dropShadow);
+                gui.text(font, Component.literal(statFormattedTime), Config.xPos, Config.yPos, Config.color, Config.dropShadow);
             }
         }
     }
