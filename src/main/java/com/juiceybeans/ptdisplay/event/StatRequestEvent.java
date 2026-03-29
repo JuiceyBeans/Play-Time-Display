@@ -2,12 +2,9 @@ package com.juiceybeans.ptdisplay.event;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.protocol.game.ServerboundClientCommandPacket;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 
-@OnlyIn(Dist.CLIENT)
 public class StatRequestEvent {
 
     @SubscribeEvent

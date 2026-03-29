@@ -10,12 +10,9 @@ import net.minecraft.stats.Stat;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.StatType;
 import net.minecraft.stats.Stats;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 
-@OnlyIn(Dist.CLIENT)
 public class RenderTimeOverlayEvent {
 
     @SubscribeEvent
